@@ -65,7 +65,7 @@ export function LogsTable({ rows = [] }: LogsTableProps): React.JSX.Element {
             </TableRow>
           </TableHead>
           <TableBody>
-            {rows.map((row) => {
+            {rows.length > 0 ? rows.map((row) => {
               const isSelected = selected?.has(row.sid);
 
               return (
@@ -88,7 +88,7 @@ export function LogsTable({ rows = [] }: LogsTableProps): React.JSX.Element {
                   </TableCell>
                 </TableRow>
               );
-            })}
+            }): <TableRow><Typography sx={{textAlign: 'center'}}>No Data Found</Typography></TableRow>}
           </TableBody>
         </Table>
       </Box>

@@ -27,6 +27,7 @@ export default function Page(): React.JSX.Element {
       console.log(response.data.data);
     } catch (error) {
       console.error('Error fetching logs:', error);
+      setIsLoading(false);
       throw new Error('Unable to fetch logs');
     }
   };
@@ -49,7 +50,7 @@ export default function Page(): React.JSX.Element {
 
   React.useEffect(() => {
     getLogs().then(() => setIsLoading(false));
-  }, []); // Removed dependency on `logs` to avoid unnecessary re-fetching
+  }, []);
 
   return (
     <Stack spacing={3}>

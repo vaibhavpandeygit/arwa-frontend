@@ -43,7 +43,7 @@ const HomePage = () => {
         <Typography variant="body2" textAlign="center" paragraph sx={{ paddingX: 8 }}>
           AI Phone Assistant combines Twilio's robust communication APIs with ChatGPT's advanced conversational AI. It enables seamless call management and AI-driven query resolution for both personal and professional use.
         </Typography>
-        {show ? <Button
+        <Button
           sx={{
             backgroundColor: '#ff5b79',
             color: '#fff',
@@ -57,8 +57,8 @@ const HomePage = () => {
           }}
           onClick={()=>router.push('/auth/sign-in')}
         >
-          Sign In
-        </Button> : ''}
+          {show ? 'Sign In' : 'Dashboard'}
+        </Button>
       </Box>
 
       {/* How It Works Section */}
